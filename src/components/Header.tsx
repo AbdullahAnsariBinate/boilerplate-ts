@@ -1,15 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {Suspense} from 'react';
+import { Text, View } from "react-native";
+import React, { Suspense, memo } from "react";
+import { IconProps } from "react-native-vector-icons/Icon";
 
-type Props = {};
-
-const Header = (props: Props) => {
-  return (
-    <Suspense fallback={'Loading...'}>
-      <Header {...props} />
-    </Suspense>
-  );
+type Props = {
+  hamburger: IconProps;
 };
 
-export default Header;
+const Header = (props: Props) => {
+  const { hamburger } = props;
+  return( <View>
+    {hamburger ? "" : null}
+    </View>);
+};
 
+export default memo(Header);

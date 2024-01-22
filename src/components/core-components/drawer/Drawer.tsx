@@ -4,7 +4,7 @@ interface DrawerContentProps {
   navigation: any;
 }
 
-const Drawer: React.FC<DrawerContentProps> = ({navigation}) => {
+const Drawers: React.FC<DrawerContentProps> = ({navigation}) => {
   return (
     <View>
       <View style={{padding: 16}}>
@@ -16,4 +16,4 @@ const Drawer: React.FC<DrawerContentProps> = ({navigation}) => {
   );
 };
 
-export default Drawer;
+export default Drawers;
