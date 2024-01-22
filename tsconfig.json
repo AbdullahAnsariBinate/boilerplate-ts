@@ -1,0 +1,42 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "." ,
+    "paths": {
+       "src/*": ["src/*"],
+       "@api/*": [
+         "src/api/*"
+       ],
+       "@assets/*": [
+         "src/assets/*"
+       ],
+       "@components/*": [
+         "src/components/*"
+       ],
+       "@scenes/*": [
+         "src/scenes/*"
+       ],
+       "@theme/*": [
+         "src/theme/*"
+       ],
+       "@utils/*": [
+         "src/utils/*"
+       ],
+       "@navigation/*": [
+        "src/navigation/*"
+      ],
+      "@auth/*": [
+        "src/scenes/auth/*"
+      ],
+      "@user/*": [
+        "src/scenes/user/*"
+      ],
+      "@constant/*": [
+        "src/constants/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ]
+    },
+ }
+}
