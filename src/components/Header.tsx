@@ -8,6 +8,7 @@ import {
   TextStyle,
   ImageStyle,
 } from "react-native";
+import { useSelector } from "react-redux";
 import { Colors } from "src/constants/Colors";
 
 type HeaderProps = {
@@ -63,7 +64,8 @@ const Header: React.FC<HeaderProps> = memo(
         </TouchableOpacity>
       ) : null;
     };
-
+    const reduxState = useSelector((state) => state?.todos);
+    console.log("🚀 ~ App ~ reduxState:", reduxState);
     return (
       <View style={[styles.container, containerStyle]}>
         {renderComponent(left, leftImageSource, onLeftPress)}
