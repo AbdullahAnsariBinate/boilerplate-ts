@@ -1,7 +1,8 @@
-const Colors = {
-    primary: '#545264',
-    gray: 'gray',
-    medium_gray: '#999',
-    dark_gray: '#666',
-  };
-  export {Colors};
+export enum Colors {
+  Primary = '#99BC85',
+  Secondary = '#BFD8AF',
+  Black = '#000000',
+  White = '#FFFFFF',
+}
+
+export default Colors;

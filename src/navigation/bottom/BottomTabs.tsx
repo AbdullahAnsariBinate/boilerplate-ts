@@ -8,33 +8,32 @@ const Tab = createBottomTabNavigator();
 const BottomTabs: React.FC = () => {
   return (
     // <View style={{ height: height - 125, width }}>
-      <Tab.Navigator
-        initialRouteName="Home"
-        tabBar={(props) => <CustomBottomTab {...props} />}
-        
+    <Tab.Navigator
+      initialRouteName="Home"
+      tabBar={(props) => <CustomBottomTab {...props} />}
+    >
+      <Tab.Group
+        screenOptions={{
+          headerShown: false,
+        }}
       >
-        <Tab.Group
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Tab.Screen
-            options={{ tabBarLabel: "Home" }}
-            name="Home"
-            component={Home}
-          />
-          <Tab.Screen
-            options={{ tabBarLabel: "About" }}
-            name="About"
-            component={About}
-          />
-          <Tab.Screen
-            options={{ tabBarLabel: "User" }}
-            name="User"
-            component={User}
-          />
-        </Tab.Group>
-      </Tab.Navigator>
+        <Tab.Screen
+          options={{ tabBarLabel: "Home" }}
+          name="Home"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{ tabBarLabel: "About" }}
+          name="About"
+          component={About}
+        />
+        <Tab.Screen
+          options={{ tabBarLabel: "User" }}
+          name="User"
+          component={User}
+        />
+      </Tab.Group>
+    </Tab.Navigator>
     // </View>
   );
 };

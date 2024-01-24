@@ -1,3 +1,4 @@
+import { NavigationContainerProps, NavigationProp, NavigationState, useNavigation } from "@react-navigation/native";
 import * as React from "react";
 import {
   Keyboard,
@@ -9,6 +10,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
+import { appIcons } from "src/assets/appAssets";
 import Header from "src/components/Header";
 
 interface ContainerProps {
@@ -25,6 +27,8 @@ interface ContainerProps {
 }
 
 const Container = (props: ContainerProps) => {
+
+  const navigation: any = useNavigation();
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -32,7 +36,18 @@ const Container = (props: ContainerProps) => {
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.innerContainer}>
-          <Header />
+          <Header
+            left
+            leftImageSource={appIcons?.drawer}
+            center
+            centerImageSource={require('../../../assets/icons/address.png')}
+            right
+            rightImageSource={appIcons?.editgoal}
+            onLeftPress={() => { navigation.openDrawer() }}
+            onRightPress={() => { }}
+            containerStyle={{ backgroundColor: 'lightblue' }}
+            textStyle={{ color: 'white' }}
+          />
           {props.children}
         </View>
       </TouchableWithoutFeedback>

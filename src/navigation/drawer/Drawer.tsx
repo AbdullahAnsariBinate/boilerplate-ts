@@ -10,6 +10,7 @@ const DrawerNavigator: React.FC = () => {
   return (
     <Drawer.Navigator
       initialRouteName="BottomTabs"
+      screenOptions={{ headerShown: false }}
       drawerContent={(props) => <Drawers {...props} />}
     >
       <Drawer.Screen name="BottomTabs" component={BottomTabs} />
