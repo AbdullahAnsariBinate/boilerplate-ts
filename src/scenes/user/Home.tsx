@@ -7,7 +7,7 @@ type Props = {};
 const Home = (props: Props) => {
   return (
     <Container>
-      <TextInput placeholder="Hello " />
+      <Text>hh</Text>
     </Container>
   );
 };

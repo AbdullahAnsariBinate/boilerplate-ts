@@ -1,7 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { InitialStateType } from "./type";
 
 const initialState: Array<InitialStateType> | any = [];
+export const fetchTodos = createAsyncThunk("fetchTodos", async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/todos`);
+  return res?.json();
+});
 const todosSlice = createSlice({
   name: "todos",
   initialState,
@@ -20,5 +24,20 @@ const todosSlice = createSlice({
   },
 });
 
+const getTodo = createSlice({
+  name: "getTodo",
+  initialState: {
+    isLoading: false,
+    data: [],
+    isError: false,
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchTodos.pending, (state, action) => {
+      initialState
+    }),
+    builder.addCase(fetchTodos.fulfilled, (state, action) => {}),
+    builder.addCase(fetchTodos.rejected, (state, action) => {}),
+  },
+});
 export const { todoAdded, todoToggled } = todosSlice.actions;
 export default todosSlice.reducer;
