@@ -33,7 +33,7 @@ class MainApplication : Application(), ReactApplication {
   override val reactHost: ReactHost
     get() = getDefaultReactHost(this.applicationContext, reactNativeHost)
 
-  override fun onCreate() {
+  override fun  () {
     super.onCreate()
     SoLoader.init(this, false)
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {

@@ -29,18 +29,18 @@ const TabItem: FC<TabProps> = ({
 }) => {
   const {curvedPaths} = usePath();
   const animatedActiveIndex = useSharedValue(activeIndex);
-  const iconPosition = getPathXCenterByIndex(curvedPaths, index);
-  const labelPosition = getPathXCenterByIndex(curvedPaths, index);
+  // const iconPosition = getPathXCenterByIndex(curvedPaths, index);
+  // const labelPosition = getPathXCenterByIndex(curvedPaths, index);
 
   const tabStyle = useAnimatedStyle(() => {
     const translateY = animatedActiveIndex.value - 1 === index ? -35 : 20;
-    const iconPositionX = iconPosition - index * ICON_SIZE;
+    // const iconPositionX = iconPosition - index * ICON_SIZE;
     return {
       width: ICON_SIZE,
       height: ICON_SIZE,
       transform: [
         {translateY: withTiming(translateY)},
-        {translateX: iconPositionX - ICON_SIZE / 2},
+        // {translateX: iconPositionX - ICON_SIZE / 2},
       ],
     };
   });
@@ -49,7 +49,7 @@ const TabItem: FC<TabProps> = ({
     return {
       transform: [
         {translateY: withTiming(translateY)},
-        {translateX: labelPosition - LABEL_WIDTH / 2},
+        // {translateX: labelPosition - LABEL_WIDTH / 2},
       ],
     };
   });

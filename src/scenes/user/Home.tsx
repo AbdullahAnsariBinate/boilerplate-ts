@@ -8,9 +8,7 @@ type Props = {};
 const Home = (props: Props) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // dispatch(fetchTodos());
-  }, []);
+
 
   let data = useSelector((state) => state?.fetchTodo);
   console.log("🚀 ~ Home ~ data:", data);

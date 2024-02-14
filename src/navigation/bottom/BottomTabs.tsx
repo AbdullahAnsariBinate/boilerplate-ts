@@ -3,13 +3,14 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home, About, User } from "@user/index";
 import CustomBottomTab from "@components/core-components/bottomtabs/CustomBottomTabs";
 import { View, Dimensions } from "react-native";
+import HrmCall from "src/scenes/user/HrmCall";
 const { height, width } = Dimensions.get("screen");
 const Tab = createBottomTabNavigator();
 const BottomTabs: React.FC = () => {
   return (
     // <View style={{ height: height - 125, width }}>
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Hrm"
       tabBar={(props) => <CustomBottomTab {...props} />}
     >
       <Tab.Group
@@ -17,6 +18,11 @@ const BottomTabs: React.FC = () => {
           headerShown: false,
         }}
       >
+        <Tab.Screen
+          options={{ tabBarLabel: "HRM" }}
+          name="Hrm"
+          component={HrmCall}
+        />
         <Tab.Screen
           options={{ tabBarLabel: "Home" }}
           name="Home"
